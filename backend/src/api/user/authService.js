@@ -20,9 +20,7 @@ const login = (req, res, next) => {
         if (err) {
             return sendErrorsFromDB(res, err)
         } else if (user && bcrypt.compareSync(password, user.password)) {
-            const token = jwt.sign(user, env.authSecret, {
-                expiresIn: "1 day"
-            })
+            const token = jwt.sign(user, env.authSecret, { expiresIn: '1 day' })
             const { name, email } = user
             res.json({ name, email, token })
         } else {
@@ -52,7 +50,7 @@ const signup = (req, res, next) => {
     if (!password.match(passwordRegex)) {
         return res.status(400).send({
             errors: [
-                "Senha precisar ter: uma letra maiúscula, uma letra minúscula, um número, uma caractere especial(@#$%) e tamanho entre 6-20."
+                'Senha precisar ter: uma letra maiúscula, uma letra minúscula, um número, uma caractere especial(@#$%) e tamanho entre 6-20.'
             ]
         })
     }
