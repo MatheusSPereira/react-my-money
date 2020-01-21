@@ -6,7 +6,7 @@ export default props => (
     <footer className="main-footer">
         <strong>
             Copyright &copy; {year.getFullYear()}
-            <a href="https://www.google.com/" target='_blank'> Google</a>.
+            <a href="https://www.google.com/" rel="noopener"> Google</a>.
         </strong>
     </footer>
 )
